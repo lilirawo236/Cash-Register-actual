@@ -207,7 +207,7 @@ namespace Cash_Register
             formGraphics.DrawString(totalItemsPurchasedCost.ToString("C"), receiptFont, fontBrush, 300, 450);
             Thread.Sleep(1000);
             formGraphics.DrawString("With Tax:", receiptFont, fontBrush, 20, 500);
-            formGraphics.DrawString(totalPrice.ToString("C"), 300, 500);
+            formGraphics.DrawString(totalPrice.ToString("C"),receiptFont, fontBrush, 300, 500);
             Thread.Sleep(1000);
         }
 
