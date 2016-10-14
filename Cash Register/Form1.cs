@@ -187,7 +187,7 @@ namespace Cash_Register
             formGraphics.DrawString(totalCookieCost.ToString("C"), receiptFont, fontBrush, 300, 200);
             Thread.Sleep(1000);
             totalBoneCost = BONE_COST * bonesPurchased;
-            formGraphics.DrawString("Spare Bones:", receiptFont, fontBrush, 20, 250);
+            formGraphics.DrawString("Spare Bones:", receiptFont, fontBrush, 20, 250); 
             formGraphics.DrawString(totalBoneCost.ToString("C"), receiptFont, fontBrush, 300, 250);
             Thread.Sleep(1000);
             totalCandyCornCost = CANDY_CORN_COST * candyCornPurchased;
