@@ -113,32 +113,32 @@ namespace Cash_Register
             presentLabel.BackColor = Color.Black;
         }
 
-        private void pumpkin_Click(object sender, EventArgs e)
+        private void pumpkinPriceButton_Click(object sender, EventArgs e)
         {
             pumpkinsPurchased = ++pumpkinsPurchased;
         }
 
-        private void eyeBall_Click(object sender, EventArgs e)
+        private void eyePriceButton_Click(object sender, EventArgs e)
         {
             eyesPurchased = ++eyesPurchased;
-       }
+        }
 
-        private void cookie_Click(object sender, EventArgs e)
+        private void cookiePriceButton_Click(object sender, EventArgs e)
         {
             cookiesPurchased = ++cookiesPurchased;
         }
 
-        private void bone_Click(object sender, EventArgs e)
+        private void bonePriceButton_Click(object sender, EventArgs e)
         {
             bonesPurchased = ++bonesPurchased;
         }
 
-        private void candyCorn_Click(object sender, EventArgs e)
+        private void candyCornPriceButton_Click(object sender, EventArgs e)
         {
             candyCornPurchased = ++candyCornPurchased;
         }
 
-        private void present_Click(object sender, EventArgs e)
+        private void presentPriceButton_Click(object sender, EventArgs e)
         {
             presentsPurchased = ++presentsPurchased;
         }
@@ -166,11 +166,8 @@ namespace Cash_Register
             present.Visible = false;
             presentLabel.Visible = false;
             presentPriceButton.Visible = false;
+            checkoutButton.Visible = false;
 
-            formGraphics.Clear(Color.Black);
-            this.BackColor = Color.White;
-            titleLabel.BackColor = Color.White;
-            titleLabel.ForeColor = Color.Black;
             Thread.Sleep(1000);
 
             //when the button is clicked, all of the total costs for each item are calculated
@@ -179,66 +176,36 @@ namespace Cash_Register
             formGraphics.DrawString(totalPumpkinCost.ToString("C"), receiptFont, fontBrush, 300, 50);
             Thread.Sleep(1000);
             totalEyeCost = EYE_COST * eyesPurchased;
-            formGraphics.DrawString("Lost Eyeballs:", receiptFont, fontBrush, 20, 150);
-            formGraphics.DrawString(totalEyeCost.ToString("C"), receiptFont, fontBrush, 300, 150);
+            formGraphics.DrawString("Lost Eyeballs:", receiptFont, fontBrush, 20, 100);
+            formGraphics.DrawString(totalEyeCost.ToString("C"), receiptFont, fontBrush, 300, 100);
             Thread.Sleep(1000);
             totalCookieCost = COOKIE_COST * cookiesPurchased;
-            formGraphics.DrawString("Giant Cookies:", receiptFont, fontBrush, 20, 200);
-            formGraphics.DrawString(totalCookieCost.ToString("C"), receiptFont, fontBrush, 300, 200);
+            formGraphics.DrawString("Giant Cookies:", receiptFont, fontBrush, 20, 150);
+            formGraphics.DrawString(totalCookieCost.ToString("C"), receiptFont, fontBrush, 300, 150);
             Thread.Sleep(1000);
             totalBoneCost = BONE_COST * bonesPurchased;
-            formGraphics.DrawString("Spare Bones:", receiptFont, fontBrush, 20, 250); 
-            formGraphics.DrawString(totalBoneCost.ToString("C"), receiptFont, fontBrush, 300, 250);
+            formGraphics.DrawString("Spare Bones:", receiptFont, fontBrush, 20, 200);
+            formGraphics.DrawString(totalBoneCost.ToString("C"), receiptFont, fontBrush, 300, 200);
             Thread.Sleep(1000);
             totalCandyCornCost = CANDY_CORN_COST * candyCornPurchased;
-            formGraphics.DrawString("Candy Corn Pieces:", receiptFont, fontBrush, 20, 300);
-            formGraphics.DrawString(totalCandyCornCost.ToString("C"), receiptFont, fontBrush, 300, 300);
+            formGraphics.DrawString("Candy Corn Pieces:", receiptFont, fontBrush, 20, 250);
+            formGraphics.DrawString(totalCandyCornCost.ToString("C"), receiptFont, fontBrush, 300, 250);
             Thread.Sleep(1000);
             totalPresentCost = PRESENT_COST * presentsPurchased;
-            formGraphics.DrawString("Wrong Holiday Presents:", receiptFont, fontBrush, 20, 350);
-            formGraphics.DrawString(totalPresentCost.ToString("C"), receiptFont, fontBrush, 300, 350);
+            formGraphics.DrawString("Wrong Holiday Presents:", receiptFont, fontBrush, 20, 300);
+            formGraphics.DrawString(totalPresentCost.ToString("C"), receiptFont, fontBrush, 300, 300);
             Thread.Sleep(1000);
 
             totalItemsPurchasedCost = totalPumpkinCost + totalEyeCost + totalCookieCost
             + totalBoneCost + totalCandyCornCost + totalPresentCost; //calculating the total cost of all items before taxes
 
             totalPrice = totalItemsPurchasedCost + totalItemsPurchasedCost * TAX;
-            formGraphics.DrawString("Total Cost:", receiptFont, fontBrush, 20, 450);
-            formGraphics.DrawString(totalItemsPurchasedCost.ToString("C"), receiptFont, fontBrush, 300, 450);
+            formGraphics.DrawString("Total:", receiptFont, fontBrush, 20, 350);
+            formGraphics.DrawString(totalPrice.ToString("C"), receiptFont, fontBrush, 300, 350);
             Thread.Sleep(1000);
-            formGraphics.DrawString("With Tax:", receiptFont, fontBrush, 20, 500);
-            formGraphics.DrawString(totalPrice.ToString("C"),receiptFont, fontBrush, 300, 500);
-            Thread.Sleep(1000);
-        }
 
-        private void pumpkinPriceButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void eyePriceButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cookiePriceButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bonePriceButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void candyCornPriceButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void presentPriceButton_Click(object sender, EventArgs e)
-        {
-
+            formGraphics.DrawString("Enter amount paid:", receiptFont, fontBrush, 20, 450);
+            paymentInput.Visible = true;
         }
     }
 }

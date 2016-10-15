@@ -49,6 +49,7 @@
             this.bonePriceButton = new System.Windows.Forms.Button();
             this.candyCornPriceButton = new System.Windows.Forms.Button();
             this.presentPriceButton = new System.Windows.Forms.Button();
+            this.paymentInput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pumpkin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eyeBall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cookie)).BeginInit();
@@ -79,7 +80,6 @@
             this.pumpkin.Size = new System.Drawing.Size(131, 115);
             this.pumpkin.TabIndex = 1;
             this.pumpkin.TabStop = false;
-            this.pumpkin.Click += new System.EventHandler(this.pumpkin_Click);
             // 
             // eyeBall
             // 
@@ -90,7 +90,6 @@
             this.eyeBall.Size = new System.Drawing.Size(138, 126);
             this.eyeBall.TabIndex = 2;
             this.eyeBall.TabStop = false;
-            this.eyeBall.Click += new System.EventHandler(this.eyeBall_Click);
             // 
             // cookie
             // 
@@ -101,7 +100,6 @@
             this.cookie.Size = new System.Drawing.Size(125, 115);
             this.cookie.TabIndex = 3;
             this.cookie.TabStop = false;
-            this.cookie.Click += new System.EventHandler(this.cookie_Click);
             // 
             // bone
             // 
@@ -112,7 +110,6 @@
             this.bone.Size = new System.Drawing.Size(170, 98);
             this.bone.TabIndex = 4;
             this.bone.TabStop = false;
-            this.bone.Click += new System.EventHandler(this.bone_Click);
             // 
             // candyCorn
             // 
@@ -123,7 +120,6 @@
             this.candyCorn.Size = new System.Drawing.Size(122, 123);
             this.candyCorn.TabIndex = 5;
             this.candyCorn.TabStop = false;
-            this.candyCorn.Click += new System.EventHandler(this.candyCorn_Click);
             // 
             // present
             // 
@@ -134,7 +130,6 @@
             this.present.Size = new System.Drawing.Size(156, 121);
             this.present.TabIndex = 6;
             this.present.TabStop = false;
-            this.present.Click += new System.EventHandler(this.present_Click);
             // 
             // pumpkinLabel
             // 
@@ -311,12 +306,23 @@
             this.presentPriceButton.UseVisualStyleBackColor = false;
             this.presentPriceButton.Click += new System.EventHandler(this.presentPriceButton_Click);
             // 
+            // paymentInput
+            // 
+            this.paymentInput.Font = new System.Drawing.Font("Castellar", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentInput.Location = new System.Drawing.Point(278, 448);
+            this.paymentInput.Name = "paymentInput";
+            this.paymentInput.Size = new System.Drawing.Size(96, 23);
+            this.paymentInput.TabIndex = 27;
+            this.paymentInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.paymentInput.Visible = false;
+            // 
             // window1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(522, 537);
+            this.Controls.Add(this.paymentInput);
             this.Controls.Add(this.presentPriceButton);
             this.Controls.Add(this.candyCornPriceButton);
             this.Controls.Add(this.bonePriceButton);
@@ -337,6 +343,7 @@
             this.Controls.Add(this.eyeBall);
             this.Controls.Add(this.pumpkin);
             this.Controls.Add(this.titleLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "window1";
             this.Text = "Halloween Store";
             ((System.ComponentModel.ISupportInitialize)(this.pumpkin)).EndInit();
@@ -372,6 +379,7 @@
         private System.Windows.Forms.Button bonePriceButton;
         private System.Windows.Forms.Button candyCornPriceButton;
         private System.Windows.Forms.Button presentPriceButton;
+        private System.Windows.Forms.TextBox paymentInput;
     }
 }
 
